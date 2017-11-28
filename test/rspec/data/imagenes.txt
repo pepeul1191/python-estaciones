@@ -1,0 +1,2 @@
+{"id":"4tjctxfir5gu87b441mmtgzdf2x5q1so","nombre":"presion","nombre_generado":"4tjctxfir5gu87b441mmtgzdf2x5q1so.png","mime":"image/png","extension":"png","anchura":20,"altura":20}
+{"id":"fah5tspk1mde77d9vbzke026tz6zsx6l","nombre":"humedad","nombre_generado":"fah5tspk1mde77d9vbzke026tz6zsx6l.png","mime":"image/png","extension":"png","anchura":24,"altura":24}

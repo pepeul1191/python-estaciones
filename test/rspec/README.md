@@ -2,4 +2,4 @@
 
 Ejecutar
   $ cd
-  $ rspec spec foto.rb
+  $ rspec spec imagen.rb
