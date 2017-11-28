@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bottle import Bottle, run, HTTPResponse
+from bottle import Bottle, run, HTTPResponse, static_file
 from views.imagen import imagen_view
 
 app = Bottle()
@@ -13,6 +13,10 @@ def index():
 @app.route('/test/conexion')
 def test_conexion():
 	return 'Ok'
+
+@app.route('/:filename#.*#')
+def send_static(filename):
+    return static_file(filename, root='./static/')
 
 if __name__ == '__main__':
 	app.merge(imagen_view)
