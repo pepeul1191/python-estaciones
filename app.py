@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from bottle import Bottle, run, HTTPResponse, static_file
 from views.imagen import imagen_view
+from views.extension import extension_view
 
 app = Bottle()
 
@@ -20,4 +21,5 @@ def send_static(filename):
 
 if __name__ == '__main__':
 	app.merge(imagen_view)
+	app.merge(extension_view)
 	app.run(host='localhost', port=3031, debug=True)
