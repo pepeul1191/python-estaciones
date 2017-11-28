@@ -16,7 +16,7 @@ def test_conexion():
 
 @app.route('/:filename#.*#')
 def send_static(filename):
-    return static_file(filename, root='./static/')
+  return static_file(filename, root='./static/')
 
 if __name__ == '__main__':
 	app.merge(imagen_view)

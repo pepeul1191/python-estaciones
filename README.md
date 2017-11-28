@@ -26,7 +26,8 @@ Ejecutar
 ### Fuentes:
 
 	+ https://bottlepy.org/docs/dev/
-	+ https://github.com/adewes/blitzdb
+	+ http://tinydb.readthedocs.io/en/latest/index.html
+  + https://buxty.com/b/2013/12/jinja2-templates-and-bottle/
 
 Thanks/Credits
 
