@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import Bottle, run, HTTPResponse
-from views.archivo import archivo_view
+from views.imagen import imagen_view
 
 app = Bottle()
 
@@ -15,5 +15,5 @@ def test_conexion():
 	return 'Ok'
 
 if __name__ == '__main__':
-	app.merge(archivo_view)
+	app.merge(imagen_view)
 	app.run(host='localhost', port=8080, debug=True, reloader=True)
