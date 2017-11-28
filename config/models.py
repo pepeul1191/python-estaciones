@@ -1,3 +1,3 @@
-from tinydb import TinyDB, Query
+from tinydb import TinyDB
 
 imagenes = TinyDB('db/imagenes.json')

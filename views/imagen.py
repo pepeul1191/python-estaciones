@@ -15,5 +15,4 @@ def imagen_view_subir():
 
 @imagen_view.route('/imagen/listar', method='GET')
 def imagen_view_listar():
-	rpta = json.dumps(fotos.all())
-	return rpta
+	return json.dumps(imagenes.all())
