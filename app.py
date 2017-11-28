@@ -1,7 +1,12 @@
-from bottle import route, run
+from bottle import Bottle, run
+from views.archivo import archivo_view
 
-@route('/hello')
+root_view = Bottle()
+
+@root_view.route('/hello')
 def hello():
 	return "Hello Worlxdd!"
 
-run(host='localhost', port=8080, debug=True, reloader=True)
+if __name__ == '__main__':
+	root_view.merge(archivo_view)
+	root_view.run(host='localhost', port=8080, debug=True, reloader=True)
