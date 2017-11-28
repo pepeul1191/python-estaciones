@@ -1,1 +1,0 @@
-{"autocommit": false, "serializer_class": "json", "store_class": "transactional", "index_class": "transactional", "indexes": {"imagen": {"pk": {"id": "8fb1ccfde7db47f1b57e6d034a970fa0", "key": "pk"}}}, "index_store_class": "basic", "version": "0.2.12"}

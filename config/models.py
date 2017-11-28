@@ -1,4 +1,3 @@
-from blitzdb import Document
+from tinydb import TinyDB, Query
 
-class Imagen(Document):
-    pass
+imagenes = TinyDB('db/imagenes.json')

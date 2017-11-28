@@ -16,4 +16,4 @@ def test_conexion():
 
 if __name__ == '__main__':
 	app.merge(imagen_view)
-	app.run(host='localhost', port=8080, debug=True, reloader=True)
+	app.run(host='localhost', port=3031, debug=True)
