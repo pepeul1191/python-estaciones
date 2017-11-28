@@ -8,7 +8,7 @@ from tinydb import Query
 extension_view = Bottle()
 
 @extension_view.route('/extension/obtener', method='GET')
-def imagen_obtener_ruta_archivo():
+def extension_obtener():
 	extension_id = int(request.query.id)
 	Extension = Query()
 	tmp = extensiones.search(Extension.id == extension_id)

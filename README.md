@@ -19,9 +19,14 @@ Ejecutar
 
 ### Rutas
 
-	+ GET -> / : IndexController#index
-	+ GET -> /error/404 : ErrorController#error_404
-	+ GET -> /responsable/listar : views.responbale#listar
+	+ GET -> / : app#index
+  + GET -> /test/conexion : app#test_conexion
+	+ GET -> /extension/obtener?id=<id> : views.extension#extension_obtener
+  + GET -> /extension/listar : views.extension#extension_listar
+  + GET -> /imagen/obtener_id : views.imagen#imagen_obtener_id
+  + GET -> /imagen/listar : views.imagen#imagen_listar
+  + GET -> /imagen/obtener_ruta_archivo?imagen_id=<imagen_id> : views.imagen#imagen_obtener_ruta_archivo
+  + POST -> /imagen/crear?data=<data> : views.imagen#imagen_subir
 
 ### Fuentes:
 
