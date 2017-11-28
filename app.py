@@ -2,6 +2,6 @@ from bottle import route, run
 
 @route('/hello')
 def hello():
-    return "Hello Worlxdd!"
+	return "Hello Worlxdd!"
 
-run(host='localhost', port=8080, debug=True)
+run(host='localhost', port=8080, debug=True, reloader=True)
