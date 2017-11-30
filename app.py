@@ -20,6 +20,6 @@ def send_static(filename):
   return static_file(filename, root='./static/')
 
 if __name__ == '__main__':
-	app.merge(imagen_view)
-	app.merge(extension_view)
-	app.run(host='localhost', port=3031, debug=True)
+	app.mount('/imagen', imagen_view)
+	app.mount('/extension', extension_view)
+	app.run(host='localhost', port=3031, debug=True, reloader=True)

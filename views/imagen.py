@@ -8,7 +8,7 @@ from tinydb import Query
 
 imagen_view = Bottle()
 
-@imagen_view.route('/imagen/crear', method='POST')
+@imagen_view.route('/crear', method='POST')
 def imagen_subir():
 	rpta = None
 	try:
@@ -20,17 +20,16 @@ def imagen_subir():
 	
 	return json.dumps(rpta)
 
-@imagen_view.route('/imagen/obtener_id', method='GET')
+@imagen_view.route('/obtener_id', method='GET')
 def imagen_obtener_id():
 	return generator_id()
 
-@imagen_view.route('/imagen/listar', method='GET')
+@imagen_view.route('/listar', method='GET')
 def imagen_listar():
 	return json.dumps(imagenes.all())
 
-@imagen_view.route('/imagen/obtener_ruta_archivo', method='GET')
-def imagen_obtener_ruta_archivo():
-	imagen_id = request.query.imagen_id
+@imagen_view.route('/obtener_ruta_archivo/<imagen_id>', method='GET')
+def imagen_obtener_ruta_archivo(imagen_id):
 	Imagen = Query()
 	tmp = imagenes.search(Imagen.id == imagen_id)
 	rpta = None
