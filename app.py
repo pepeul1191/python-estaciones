@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bottle import Bottle, run, HTTPResponse, static_file
+from bottle import Bottle, run, HTTPResponse, static_file, hook
 from views.imagen import imagen_view
 from views.extension import extension_view
 
 app = Bottle()
+
+@hook('after_request')
+def enable_cors():
+	response.headers['Access-Control-Allow-Origin'] = '*'
+	response.headers['x-powered-by'] = 'Ubuntu'
 
 @app.route('/')
 def index():
