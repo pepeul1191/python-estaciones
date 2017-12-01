@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import Bottle, run, HTTPResponse, static_file, hook
+from views.estacion import estacion_view
+from views.sensor import sensor_view
+from views.tipo_estacion import tipo_estacion_view
+from views.unidad_medida import unidad_medida_view
 
 app = Bottle()
 
@@ -23,5 +27,9 @@ def send_static(filename):
   return static_file(filename, root='./static/')
 
 if __name__ == '__main__':
-	app.run(host='localhost', port=3031, debug=True, reloader=True)
-	#app.run(host='localhost', port=3031, debug=True)
+	app.mount('/estacion', estacion_view)
+	app.mount('/sensor', sensor_view)
+	app.mount('/tipo_estacion', tipo_estacion_view)
+	app.mount('/unidad_medida', unidad_medida_view)
+	app.run(host='localhost', port=3041, debug=True, reloader=True)
+	#app.run(host='localhost', port=3041, debug=True)
