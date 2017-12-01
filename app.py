@@ -24,3 +24,4 @@ def send_static(filename):
 
 if __name__ == '__main__':
 	app.run(host='localhost', port=3031, debug=True, reloader=True)
+	#app.run(host='localhost', port=3031, debug=True)

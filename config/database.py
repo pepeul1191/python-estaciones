@@ -1,7 +1,9 @@
-import string
-import random
+# config/database.py
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-def generator_id():
-	size = 32
-	chars = string.ascii_lowercase + string.digits
-	return ''.join(random.choice(chars) for _ in range(size))
+Base = declarative_base()
+engine = create_engine('sqlite:///db/db_estaciones.db')
+session_db = sessionmaker()
+session_db.configure(bind=engine)
