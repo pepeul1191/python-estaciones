@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import Bottle, run, HTTPResponse, static_file, hook
-from views.imagen import imagen_view
-from views.extension import extension_view
 
 app = Bottle()
 
@@ -25,6 +23,4 @@ def send_static(filename):
   return static_file(filename, root='./static/')
 
 if __name__ == '__main__':
-	app.mount('/imagen', imagen_view)
-	app.mount('/extension', extension_view)
 	app.run(host='localhost', port=3031, debug=True, reloader=True)
