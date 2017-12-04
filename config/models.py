@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import Table, Column, Integer, String, ForeignKey, Float
-from configs.database import Base
+from config.database import Base
 # http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html
+class UnidadMedida(Base):
+	__tablename__ = 'unidad_medidas'
+	id = Column(Integer, primary_key=True)
+	nombre = Column(String)
+	simbolo = Column(String)

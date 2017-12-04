@@ -31,5 +31,5 @@ if __name__ == '__main__':
 	app.mount('/sensor', sensor_view)
 	app.mount('/tipo_estacion', tipo_estacion_view)
 	app.mount('/unidad_medida', unidad_medida_view)
-	app.run(host='localhost', port=3041, debug=True, reloader=True)
+	app.run(host='localhost', port=3025, debug=True, reloader=True)
 	#app.run(host='localhost', port=3041, debug=True)
