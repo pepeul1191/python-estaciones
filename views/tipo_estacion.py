@@ -9,7 +9,7 @@ from config.database import engine, session_db
 tipo_estacion_view = Bottle()
 
 @tipo_estacion_view.route('/listar', method='GET')
-def extension_listar():
+def listar():
 	conn = engine.connect()
 	stmt = select([TipoEstacion])
 	return json.dumps([dict(r) for r in conn.execute(stmt)])
