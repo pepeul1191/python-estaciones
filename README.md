@@ -16,6 +16,7 @@ Instalación de dependencias:
 Ejecutar
   $ cd test/rspec
   $ rspec spec unidad_medida.rb
+  $ rspec spec tipo_estacion.rb
 
 ### Migraciones
 
