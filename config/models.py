@@ -7,3 +7,8 @@ class UnidadMedida(Base):
 	id = Column(Integer, primary_key=True)
 	nombre = Column(String)
 	simbolo = Column(String)
+
+class TipoEstacion(Base):
+	__tablename__ = 'tipo_estaciones'
+	id = Column(Integer, primary_key=True)
+	nombre = Column(String)
