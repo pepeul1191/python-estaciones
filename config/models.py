@@ -23,3 +23,11 @@ class Estacion(Base):
 	altura = Column(Float)
 	campo_id = Column(Integer)
 	tipo_estacion_id = Column(Integer, ForeignKey('tipo_estaciones.id'))
+
+class Sensor(Base):
+	__tablename__ = 'sensores'
+	id = Column(Integer, primary_key=True)
+	nombre = Column(String)
+	descripcion = Column(String)
+	unidad_medida_id = Column(Integer, ForeignKey('unidad_medidas.id'))
+	estacion_id = Column(Integer, ForeignKey('estaciones.id'))
