@@ -14,6 +14,12 @@ def listar():
 	stmt = select([Estacion])
 	return json.dumps([dict(r) for r in conn.execute(stmt)])
 
+@estacion_view.route('/campo/<campo_id>')
+def index(campo_id):
+	conn = engine.connect()
+	stmt = select([Estacion]).where(Estacion.campo_id == campo_id)
+	return json.dumps([dict(r) for r in conn.execute(stmt)])
+
 @estacion_view.route('/guardar', method='POST')
 def guardar():
 	data = json.loads(request.query.data)

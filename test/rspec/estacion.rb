@@ -191,7 +191,37 @@ def eliminar
   end
 end
 
+def listar_campos
+  RSpec.describe App do
+    describe "5. Listar Campos: " do
+      it '5.1 Conexión con backend' do
+        url = 'test/conexion'
+        test = App.new(url)
+        test.get()
+        expect(test.response.code).to eq(200)
+      end
+      it '5.2 Listar ninguna estaciones segun campo' do
+        url = 'estacion/campo/128'
+        test = App.new(url)
+        test.get()
+        expect(test.response.code).to eq(200)
+        registros = JSON.parse(test.response.body).length
+        expect(registros).to eq(0)
+      end
+      it '5.3 Listar ninguna estaciones segun campo' do
+        url = 'estacion/campo/129'
+        test = App.new(url)
+        test.get()
+        expect(test.response.code).to eq(200)
+        registros = JSON.parse(test.response.body).length
+        expect(registros).to be > 0
+      end
+    end
+  end
+end
+
 #listar
 #crear
 #editar
-eliminar
+#eliminar
+listar_campos
