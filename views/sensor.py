@@ -18,7 +18,7 @@ def listar():
 def listar_estacion(estacion_id):
 	conn = engine.connect()
 	stmt = """
-		SELECT S.id, S.nombre, S.descripcion, (U.nombre || ',' || U.simbolo) AS unidad_medida  
+		SELECT S.id, S.nombre, S.descripcion, (U.nombre || ',' || U.simbolo) AS unidad_medida, S.unidad_medida_id 
 		FROM sensores S INNER JOIN unidad_medidas U ON U.id = S.unidad_medida_id
 		WHERE S.estacion_id = :estacion_id
 		"""
