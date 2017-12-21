@@ -14,6 +14,16 @@ def listar():
 	stmt = select([UnidadMedida])
 	return json.dumps([dict(r) for r in conn.execute(stmt)])
 
+@unidad_medida_view.route('/listar_select', method='GET')
+def listar_select():
+	conn = engine.connect()
+	stmt = select([UnidadMedida])
+	rpta = []
+	for r in conn.execute(stmt):
+		t = {'id': r[0], 'nombre': r[1] + ', ' + r[2]}
+		rpta.append(t)
+	return json.dumps(rpta)
+
 @unidad_medida_view.route('/guardar', method='POST')
 def guardar():
 	data = json.loads(request.query.data)
